@@ -1,0 +1,35 @@
+{
+  "name": "{{name}}",
+  "version": "0.0.1",
+  "description": "{{description}}",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && babel src -d lib --copy-files",
+    "watch": "rimraf lib && babel src -d lib --copy-files --watch",
+    "dev": "electron .",
+    "lint": "eslint {src,test} --fix",
+    "unittest": "mocha --compilers js:babel-register --recursive test --timeout 10000",
+    "test": "npm run lint && npm run unittest",
+    "package": "electron-packager . {{name}} --out build --overwrite --ignore=src --platform=mas --arch=x64 --icon {{name}}.icns"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airtoxin/{{name}}"
+  },
+  "keywords": [],
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "private": true,
+  "author": "airtoxin <airtoxin@icloud.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/airtoxin/{{name}}/issues"
+  },
+  "homepage": "https://github.com/airtoxin/{{name}}#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
