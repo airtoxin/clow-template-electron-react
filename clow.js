@@ -19,7 +19,8 @@ module.exports = [
       "baobab",
       "baobab-react",
       "react",
-      "react-dom"
+      "react-dom",
+      "lodash"
     ],
     devDependencies: [
       "babel-cli",
