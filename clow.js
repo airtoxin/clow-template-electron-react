@@ -37,14 +37,15 @@ module.exports = [
       "electron",
       "electron-packager",
       "eslint",
-      "eslint-config-airbnb",
-      "eslint-plugin-async-await",
-      "eslint-plugin-babel",
-      "eslint-plugin-import",
-      "eslint-plugin-jsx-a11y",
-      "eslint-plugin-react",
       "mocha",
       "rimraf"
+    ]
+  },
+  {
+    // install eslint preset
+    type: "shell",
+    commands: [
+      "npm info 'eslint-config-airbnb@latest' peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --DE 'eslint-config-airbnb@latest'"
     ]
   },
   {
