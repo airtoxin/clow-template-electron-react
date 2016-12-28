@@ -2,15 +2,19 @@
   "name": "{{name}}",
   "version": "0.0.1",
   "description": "{{description}}",
-  "main": "lib/index.js",
+  "main": "dest/index.js",
   "scripts": {
-    "build": "rimraf lib && babel src -d lib --copy-files",
-    "watch": "rimraf lib && babel src -d lib --copy-files --watch",
-    "dev": "electron .",
-    "lint": "eslint {src,test} --fix",
-    "unittest": "mocha --compilers js:babel-register --recursive test --timeout 10000",
-    "test": "npm run lint && npm run unittest",
-    "package": "electron-packager . {{name}} --out build --overwrite --ignore=src --platform=mas --arch=x64 --icon {{name}}.icns"
+    "clean": "rimraf dest",
+    "copy": "copyfiles node_modules/photonkit/dist/{css,fonts}/* -f dest/renderer/static",
+    "build": "babel src --out-dir dest --copy-files",
+    "watch": "babel src --out-dir dest --copy-files --watch",
+    "start": "electron .",
+    "watch_n_start": "run-p watch start",
+    "dev": "run-s clean build copy watch_n_start",
+    "test:lint": "eslint {src,test} --fix",
+    "test:unit": "mocha --compilers js:babel-register --recursive test --timeout 10000",
+    "test": "run-p test:*",
+    "package": "electron-packager . youtubar --out build --overwrite --ignore=src --platform=mas --arch=x64 --icon youtubar.icns"
   },
   "repository": {
     "type": "git",
@@ -18,7 +22,7 @@
   },
   "keywords": [],
   "directories": {
-    "lib": "lib",
+    "src": "src",
     "test": "test"
   },
   "private": true,

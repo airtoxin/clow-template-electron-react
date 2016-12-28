@@ -18,13 +18,16 @@ module.exports = [
       "babel-runtime",
       "baobab",
       "baobab-react",
+      "lodash",
       "react",
-      "react-dom",
-      "lodash"
+      "react-dom"
     ],
     devDependencies: [
       "babel-cli",
       "babel-eslint",
+      "babel-plugin-css-modules-transform",
+      "babel-plugin-lodash",
+      "babel-plugin-transform-inline-environment-variables",
       "babel-plugin-transform-runtime",
       "babel-preset-es2015",
       "babel-preset-es2016",
@@ -38,8 +41,8 @@ module.exports = [
       "electron-packager",
       "eslint",
       "eslint-plugin-babel",
-      "eslint-plugin-async-await",
       "mocha",
+      "npm-run-all",
       "rimraf"
     ]
   },
