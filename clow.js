@@ -41,6 +41,7 @@ module.exports = [
       "electron-packager",
       "eslint",
       "eslint-plugin-babel",
+      "eslint-plugin-async-await",
       "mocha",
       "npm-run-all",
       "rimraf"

@@ -1,8 +1,5 @@
 import lodash from 'lodash';
 import * as localStorageService from './services/localstorage';
-import apiClientService from './services/api-client';
-
-const MAX_PASSED_QUEUE_SIZE = 50;
 
 const matchPath = (updatee, path) => lodash.isEqual(updatee.data.paths[0], path);
 
