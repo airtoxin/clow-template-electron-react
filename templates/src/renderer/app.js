@@ -3,6 +3,7 @@ import lodash from 'lodash';
 import { render } from 'react-dom';
 import { root } from 'baobab-react/higher-order';
 import App from './containers/App';
+import * as localStorageService from './services/localstorage';
 import middlewares from './middlewares';
 import tree from './tree';
 
